@@ -20,4 +20,14 @@ const theme: Theme = {
   `,
 };
 
-export default theme;
+export const themeLight: Theme = {
+  ...theme,
+  text: '#000000',
+  background: '#ffffff',
+};
+
+export const themeDark: Theme = {
+  ...theme,
+  text: '#ffffff',
+  background: '#000000',
+};

@@ -16,5 +16,8 @@ declare module '@emotion/react' {
       justifyContent?: string,
       alignItems?: string,
     ) => InterpolationWithTheme;
+
+    text?: string;
+    background?: string;
   }
 }
