@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { ReactElement, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeProvider } from '@emotion/react';
 
 import App from '@src/App';
-import theme from '@src/styles/theme';
+import { themeLight, themeDark } from '@src/styles/theme';
 
-ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <App />
-  </ThemeProvider>, document.getElementById('root'),
-);
+const Root = (): ReactElement => {
+  const [isDark, setIsDark] = useState<boolean>(false);
+
+  return (
+    <ThemeProvider theme={isDark ? themeDark : themeLight}>
+      <App isDark={isDark} setIsDark={setIsDark} />
+    </ThemeProvider>
+  );
+};
+
+ReactDOM.render(<Root />, document.getElementById('root'));
