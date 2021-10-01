@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ThemeProvider, Global } from '@emotion/react';
+import { BrowserRouter } from 'react-router-dom';
 
 import App from '@src/App';
 import store, { useUiState } from '@src/store';
@@ -12,10 +13,12 @@ const Root = (): ReactElement => {
   const { isDark } = useUiState();
 
   return (
-    <ThemeProvider theme={isDark ? themeDark : themeLight}>
-      <Global styles={globalStyles} />
-      <App />
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={isDark ? themeDark : themeLight}>
+        <Global styles={globalStyles} />
+        <App />
+      </ThemeProvider>
+    </BrowserRouter>
   );
 };
 
