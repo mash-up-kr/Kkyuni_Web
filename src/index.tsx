@@ -1,24 +1,27 @@
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ThemeProvider, Global } from '@emotion/react';
 
 import App from '@src/App';
-import store from '@src/store';
+import store, { useUiState } from '@src/store';
 import { themeLight, themeDark } from '@src/styles/theme';
 import globalStyles from '@src/styles/globalStyles';
 
 const Root = (): ReactElement => {
-  const [isDark, setIsDark] = useState<boolean>(false);
+  const { isDark } = useUiState();
 
   return (
-    <Provider store={store}>
-      <ThemeProvider theme={isDark ? themeDark : themeLight}>
-        <Global styles={globalStyles} />
-        <App isDark={isDark} setIsDark={setIsDark} />
-      </ThemeProvider>
-    </Provider>
+    <ThemeProvider theme={isDark ? themeDark : themeLight}>
+      <Global styles={globalStyles} />
+      <App />
+    </ThemeProvider>
   );
 };
 
-ReactDOM.render(<Root />, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <Root />
+  </Provider>,
+  document.getElementById('root'),
+);

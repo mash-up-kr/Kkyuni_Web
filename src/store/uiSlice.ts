@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface UIState {
-  isDark: boolean;
-  isLoading: boolean;
+  isDark?: boolean;
+  isLoading?: boolean;
 }
 
 const initialState: UIState = {
@@ -23,5 +23,5 @@ const uiReducer = createSlice({
   },
 });
 
-export const { setLoading, setIsDark } = uiReducer.actions;
+export const { setIsDark, setLoading } = uiReducer.actions;
 export default uiReducer.reducer;
