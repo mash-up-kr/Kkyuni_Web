@@ -4,6 +4,6 @@
   },
   "eslint.validate": ["typescript"],
   "[typescript]": {
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": false
   },
 }
