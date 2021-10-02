@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   env: {
     browser: true,
     es2021: true,
@@ -56,7 +56,7 @@ export default {
       'error',
       require('os').EOL === '\r\n' ? 'windows' : 'unix',
     ],
-    'prettier/prettier': ['error', { endOfLine: 'auto' }],
+    'react/require-default-props': 'off'
   },
   settings: {
     'import/resolver': {
