@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import styled from '@emotion/styled';
 import CardA from '@src/assets/CardA.svg';
 import Play from '@src/assets/Play.svg';
-import Barcode from '@src/assets/BarcodeSmall.svg';
+import BarcodeSmall from '@src/assets/BarcodeSmall.png';
 
 import AlbumCover from '@src/components/AlbumCover';
 import Text from '@src/components/Text';
@@ -129,7 +129,7 @@ const WrapCanvasA = ({
       <Text text={content} className="text3" />
     </div>
     <div className="barcode">
-      <Barcode />
+      <img src={BarcodeSmall} alt="barcode_small" />
     </div>
   </Wrapper>
 );

@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import styled from '@emotion/styled';
 import CardB from '@src/assets/CardB.svg';
-import BarcodeLarge from '@src/assets/BarcodeLarge.svg';
+import BarcodeLarge from '@src/assets/BarcodeLarge.png';
 import Play from '@src/assets/Play.svg';
 
 import Diary from '@src/types/Diary';
@@ -128,7 +128,7 @@ const WrapCanvasB = ({
         >
           <WrappedCover src={youtubeInfo.thumbnail} />
         </a>
-        <BarcodeLarge />
+        <img src={BarcodeLarge} alt="barcode_large" />
       </AlbumRow>
       <TitleRow>
         <Text text={title} className="text2" />
