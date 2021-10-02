@@ -104,7 +104,7 @@ const WrapCanvasA = ({
   youtubeInfo,
   emotion,
 }: Diary): ReactElement => (
-  <Wrapper color={type === 'BLUE2' ? '#4B13FE' : '#C4F212'}>
+  <Wrapper color={type === 'BLUE' ? '#4B13FE' : '#C4F212'}>
     <span className="date">
       <Text text={formatDate(date)} className="text4" rotate />
     </span>
