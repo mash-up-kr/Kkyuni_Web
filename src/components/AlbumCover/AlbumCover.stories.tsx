@@ -1,13 +1,16 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import AlbumCover from '@src/components/AlbumCover';
+import AlbumCover, { AlbumCoverProps } from '@src/components/AlbumCover';
 
 export default {
   title: 'Album Cover',
   component: AlbumCover,
 } as Meta;
 
-const Template: Story = ({ src, isSmall }) => <AlbumCover src={src} isSmall={isSmall} />;
+const Template: Story<AlbumCoverProps> = ({
+  src,
+  isSmall,
+}: AlbumCoverProps) => <AlbumCover src={src} isSmall={isSmall} />;
 
 export const albumCover = Template.bind({});
 
