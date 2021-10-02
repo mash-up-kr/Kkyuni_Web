@@ -3,10 +3,10 @@ import styled from '@emotion/styled';
 import EmotionBlue from '@src/assets/EmotionBlue.svg';
 import EmotionYellow from '@src/assets/EmotionYellow.svg';
 
-type BadgeType = 'blue' | 'yellow';
+import { Emotion } from '@src/types/Diary';
 
 export interface BadgeProps {
-  type: BadgeType;
+  type: Emotion;
 }
 
 const Wrapper = styled.div`
@@ -18,8 +18,8 @@ const Badge = ({ type }: BadgeProps): ReactElement => (
   <Wrapper className="badge">
     {
       {
-        blue: <EmotionBlue />,
-        yellow: <EmotionYellow />,
+        ANGRY: <EmotionBlue />,
+        HAPPY: <EmotionYellow />,
       }[type]
     }
   </Wrapper>
