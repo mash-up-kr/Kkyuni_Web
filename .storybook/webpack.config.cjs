@@ -12,6 +12,12 @@ module.exports = async ({ config }) => {
   });
 
   
+  const fileLoaderRule = config.module.rules.find(
+    (rule) => rule.test && rule.test.test(".svg")
+  );
+  
+  fileLoaderRule.exclude = /\.svg$/;
+  
   config.resolve.alias = {
     '@src': SRC_PATH,
   };
