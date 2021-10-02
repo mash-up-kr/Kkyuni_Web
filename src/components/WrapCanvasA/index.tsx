@@ -35,7 +35,11 @@ const Wrapper = styled.div`
       width: 100%;
     }
     svg {
-      margin-right: 20px;
+      display: block;
+    }
+    > div {
+      height: auto;
+      margin-left: 5px;
     }
   }
 
@@ -84,7 +88,9 @@ const WrapCanvasA = (): ReactElement => (
     <AlbumCover src="" />
     <Badge type="yellow" />
     <div className="play-container">
-      <Play />
+      <span>
+        <Play />
+      </span>
       <Text text="absdb" className="text1" />
     </div>
     <CardA />
