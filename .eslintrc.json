@@ -44,7 +44,7 @@
     ],
     "react/jsx-filename-extension": [
       2,
-      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+      { "extensions": [".js", ".jsx", ".ts", ".tsx", ".svg"] }
     ],
     "no-param-reassign": "off",
     "no-use-before-define": "off",
@@ -59,7 +59,7 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".svg"],
         "moduleDirectory": [
           "node_modules",
           "@types"
