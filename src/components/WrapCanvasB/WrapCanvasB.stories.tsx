@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react';
 import WrapCanvasB from '@src/components/WrapCanvasB';
 
 export default {
-  title: 'WrapCanvasB',
+  title: 'Wrap Canvas B',
   component: WrapCanvasB,
 } as Meta;
 
