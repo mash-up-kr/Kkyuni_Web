@@ -10,6 +10,7 @@ const renderApp = ({ path }: { path: string }) => render(
   <MemoryRouter initialEntries={[path]}>
     <App />
   </MemoryRouter>,
+
 );
 
 describe('<App>', () => {
