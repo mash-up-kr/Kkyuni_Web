@@ -3,11 +3,11 @@ import axios, { AxiosResponse } from "axios";
 import Diary from '@src/types/Diary';
 import { API_URL } from './common';
 
-export interface GetDiaryRequestType {
+export type GetDiaryRequestType = {
   diaryId: string;
 }
 
-interface GetDiaryResponseType {
+export type GetDiaryResponseType = {
   isSuccess: boolean;
   diary: Diary;
 }

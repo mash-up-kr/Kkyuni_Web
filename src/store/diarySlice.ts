@@ -1,5 +1,5 @@
 import { ActionReducerMapBuilder, createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { getDiaryById, GetDiaryRequestType } from '@src/api/diaryApi';
+import { getDiaryById, GetDiaryRequestType, GetDiaryResponseType } from '@src/api/diaryApi';
 
 import Diary from '@src/types/Diary';
 
@@ -33,7 +33,7 @@ const diaryReducer = createSlice({
         diary,
         isSuccess
       },
-    }) => {
+    }: PayloadAction<GetDiaryResponseType>) => {
       state.diary = isSuccess ? diary : undefined;
     });
   }
