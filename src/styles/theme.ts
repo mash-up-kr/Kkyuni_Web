@@ -26,6 +26,12 @@ const theme: Theme = {
     justify-content: ${justifyContent};
     align-items: ${alignItems};
   `,
+  ellipse: (wrap = 'nowrap') => css`
+    text-overflow: ellipsis;
+    white-space: ${wrap};
+    overflow: hidden;
+    display: block;
+  `,
 };
 
 export const themeLight: Theme = {
