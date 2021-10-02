@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
 import styled from '@emotion/styled';
 import { useAppDispatch, useUiState, setIsDark } from '@src/store';
+import Text from '@src/components/Text';
 
 const Wrapper = styled.div`
   ${({ theme }) => theme.flexCol()}
@@ -44,6 +45,7 @@ const Toggle = (): ReactElement => {
       <div className="text2">일기 제목</div>
       <div className="text3">일기 내용</div>
       <div className="text4">211002</div>
+
     </Wrapper>
   );
 };
