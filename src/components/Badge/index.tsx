@@ -5,7 +5,7 @@ import EmotionYellow from '@src/assets/EmotionYellow.svg';
 
 type BadgeType = 'blue' | 'yellow';
 
-interface BadgeProps {
+export interface BadgeProps {
   type: BadgeType;
 }
 
