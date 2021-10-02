@@ -111,7 +111,7 @@ const WrapCanvasB = ({
   youtubeInfo,
   emotion,
 }: Diary): ReactElement => (
-  <Wrapper color={type === 'BLUE2' ? '#4B13FE' : '#C4F212'}>
+  <Wrapper color={type === 'BLUE' ? '#4B13FE' : '#C4F212'}>
     <CardB />
     <ContentWrapper>
       <SongNameRow>
@@ -121,7 +121,11 @@ const WrapCanvasB = ({
         <Text text={youtubeInfo.title} className="text1" />
       </SongNameRow>
       <AlbumRow>
-        <a href={youtubeInfo.link} target="_blank" rel="noreferrer">
+        <a
+          href={`${youtubeInfo.link}?t=${youtubeInfo.playTime}`}
+          target="_blank"
+          rel="noreferrer"
+        >
           <WrappedCover src={youtubeInfo.thumbnail} />
         </a>
         <BarcodeLarge />
@@ -134,7 +138,7 @@ const WrapCanvasB = ({
       </DetailRow>
     </ContentWrapper>
     <BadgeWrapper>
-      <Badge type="ANGRY" />
+      <Badge type={emotion} />
     </BadgeWrapper>
     <DateWrapper>
       <Text text={formatDate(date)} className="text4" />

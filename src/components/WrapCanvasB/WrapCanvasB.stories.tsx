@@ -16,7 +16,8 @@ wrapCanvasB.args = {
   title: '우리의개꿈',
   content: '화성갈끄니까',
   date: new Date(),
-  type: 'BLUE2',
+  type: 'BLUE',
+  emotion: 'ANGRY',
   youtubeInfo: {
     link: 'https://youtu.be/Ih4xoL9KqOE',
     title: '코인 퉤 - 우리의 개꿈',
