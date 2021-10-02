@@ -13,5 +13,5 @@ export const albumCover = Template.bind({});
 
 albumCover.args = {
   src: 'https://media.architecturaldigest.com/photos/5890e88033bd1de9129eab0a/1:1/w_870,h_870,c_limit/Artist-Designed%20Album%20Covers%202.jpg',
-  isSmall: false
+  isSmall: false,
 };
