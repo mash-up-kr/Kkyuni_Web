@@ -2,6 +2,8 @@ import React, { ReactElement } from 'react';
 import styled from '@emotion/styled';
 import CardB from '@src/assets/CardB.svg';
 import BarcodeLarge from '@src/assets/BarcodeLarge.svg';
+import Play from '@src/assets/Play.svg';
+
 import Diary from '@src/types/Diary';
 import { formatDate } from '@src/util';
 import AlbumCover from '../AlbumCover';
@@ -39,6 +41,9 @@ const SongNameRow = styled.div`
   padding: 0 10px;
   box-sizing: border-box;
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
+  a {
+    padding-right: 5px;
+  }
 `;
 
 const AlbumRow = styled.div`
@@ -110,6 +115,9 @@ const WrapCanvasB = ({
     <CardB />
     <ContentWrapper>
       <SongNameRow>
+        <a href={youtubeInfo.link} target="_blank" rel="noreferrer">
+          <Play />
+        </a>
         <Text text={youtubeInfo.title} className="text1" />
       </SongNameRow>
       <AlbumRow>
