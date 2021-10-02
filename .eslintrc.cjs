@@ -42,7 +42,7 @@ module.exports = {
     ],
     'react/jsx-filename-extension': [
       2,
-      { extensions: ['.js', '.jsx', '.ts', '.tsx', '.svg'] },
+      { extensions: ['.js', '.jsx', '.ts', '.tsx', '.svg', '.png'] },
     ],
     'no-param-reassign': 'off',
     'no-use-before-define': 'off',
@@ -56,12 +56,12 @@ module.exports = {
       'error',
       require('os').EOL === '\r\n' ? 'windows' : 'unix',
     ],
-    'react/require-default-props': 'off'
+    'react/require-default-props': 'off',
   },
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.svg'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.svg', '.png'],
         moduleDirectory: ['node_modules', '@types'],
       },
       typescript: './tsconfig.json',
