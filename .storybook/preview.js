@@ -6,6 +6,7 @@ import { ThemeProvider, Global } from '@emotion/react';
 import store, { useUiState } from '@src/store';
 import { themeLight, themeDark } from '@src/styles/theme';
 import globalStyles from '@src/styles/globalStyles';
+import '../public/style.css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
