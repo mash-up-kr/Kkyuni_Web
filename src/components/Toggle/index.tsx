@@ -12,19 +12,23 @@ const Wrapper = styled.div`
     font-family: 'Gmarket Sans';
     font-weight: bold;
     font-size: 13px;
+    color: ${({ theme }) => theme.colors.white70};
   }
   .text2{
     font-family: 'Gmarket Sans';
     font-weight: bold;
     font-size: 18px;
+    color: ${({ theme }) => theme.colors.white70};
   }
   .text3{
     font-family: 'Gmarket Sans';
     font-size: 14px;
+    color: ${({ theme }) => theme.colors.white60};
   }
   .text4{
     font-family: 'Black Ops One';
     font-size: 70px;
+    color: ${({ theme }) => theme.colors.white10};
   }
 `;
 
