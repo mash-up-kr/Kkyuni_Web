@@ -126,7 +126,7 @@ const WrapCanvasB = ({
       </DetailRow>
     </ContentWrapper>
     <BadgeWrapper>
-      <Badge type="blue" />
+      <Badge type="ANGRY" />
     </BadgeWrapper>
     <DateWrapper>
       <Text text={formatDate(date)} className="text4" />

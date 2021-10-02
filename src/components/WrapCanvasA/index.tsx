@@ -2,10 +2,14 @@ import React, { ReactElement } from 'react';
 import styled from '@emotion/styled';
 import CardA from '@src/assets/CardA.svg';
 import Play from '@src/assets/Play.svg';
+import Barcode from '@src/assets/BarcodeSmall.svg';
 
 import AlbumCover from '@src/components/AlbumCover';
 import Text from '@src/components/Text';
 import Badge from '@src/components/Badge';
+
+import Diary from '@src/types/Diary';
+import { formatDate } from '@src/util';
 
 const Wrapper = styled.div`
   position: relative;
@@ -14,6 +18,10 @@ const Wrapper = styled.div`
   height: 512px;
 
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  svg {
+    color: ${(props) => props.color};
+  }
 
   .date {
     position: absolute;
@@ -78,31 +86,50 @@ const Wrapper = styled.div`
     }
     ${({ theme }) => theme.flexCol('flex-start', 'flex-start')}
   }
+
+  .barcode {
+    position: absolute;
+    left: 68.21%;
+    right: -11.43%;
+    top: 93.16%;
+    bottom: -2.15%;
+  }
 `;
 
-const WrapCanvasA = (): ReactElement => (
-  <Wrapper>
+const WrapCanvasA = ({
+  type,
+  date,
+  title,
+  content,
+  youtubeInfo,
+  emotion,
+}: Diary): ReactElement => (
+  <Wrapper color={type === 'BLUE2' ? '#4B13FE' : '#C4F212'}>
     <span className="date">
-      <Text text="211010" className="text4" rotate />
+      <Text text={formatDate(date)} className="text4" rotate />
     </span>
-    <AlbumCover src="" />
-    <Badge type="yellow" />
+    <a
+      className="album-cover"
+      href={youtubeInfo.link}
+      target="_blank"
+      rel="noreferrer"
+    >
+      <AlbumCover src={youtubeInfo.thumbnail} />
+    </a>
+    <Badge type={emotion} />
     <div className="play-container">
-      <span>
+      <a href={youtubeInfo.link} target="_blank" rel="noreferrer">
         <Play />
-      </span>
-      <Text text="absdb" className="text1" />
+      </a>
+      <Text text={youtubeInfo.title} className="text1" />
     </div>
     <CardA />
     <div className="text-area">
-      <Text
-        text="asdfsadfasdfsaasdfsadfasdfsaasdfsadfasdfsa"
-        className="text2"
-      />
-      <Text
-        text="asdfsadfsdafsdafsadfsadfsadfsadfasdfasdfadsdfdas"
-        className="text3"
-      />
+      <Text text={title} className="text2" />
+      <Text text={content} className="text3" />
+    </div>
+    <div className="barcode">
+      <Barcode />
     </div>
   </Wrapper>
 );
