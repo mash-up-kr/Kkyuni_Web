@@ -11,8 +11,12 @@ const Wrapper = styled.img<{ isSmall?: boolean }>`
   height: ${({ isSmall }) => (isSmall ? '200px' : '220px')};
 `;
 
-const AlbumCover = ({ src, isSmall }: AlbumCoverProps): ReactElement => (
-  <Wrapper src={src} isSmall={isSmall} />
+const AlbumCover = ({
+  src,
+  isSmall,
+  ...restProps
+}: AlbumCoverProps & Omit<React.HTMLProps<HTMLImageElement>, 'as' | 'crossOrigin'>): ReactElement => (
+  <Wrapper src={src} isSmall={isSmall} {...restProps} />
 );
 
 export default AlbumCover;
