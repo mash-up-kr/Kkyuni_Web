@@ -6,11 +6,15 @@ import AlbumCover from '../AlbumCover';
 import Badge from '../Badge';
 import Text from '../Text';
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ color: string }>`
   position: relative;
   width: 280px;
   height: 512px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  svg {
+    color: ${(props) => props.color};
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -93,7 +97,7 @@ const DateWrapper = styled.div`
 `;
 
 const WrapCanvasB = (): ReactElement => (
-  <Wrapper>
+  <Wrapper color="#C4F212">
     <CardB />
     <ContentWrapper>
       <SongNameRow>
