@@ -53,7 +53,8 @@
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "import/no-extraneous-dependencies": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "linebreak-style": ["error", "windows", "osx"]
   },
   "settings": {
     "import/resolver": {

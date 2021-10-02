@@ -1,0 +1,22 @@
+name: React build
+on:
+  push:
+    branches:
+      - master
+      - develop
+      - env/github-actions
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout source code.
+        uses: actions/checkout@master
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Build
+        run: yarn build
