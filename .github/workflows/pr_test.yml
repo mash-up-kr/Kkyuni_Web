@@ -14,5 +14,8 @@ jobs:
         with:
           ref: ${{ github.ref }}
 
+      - name: Install Dependencies
+        run: yarn install
+
       - name: Run tests
         run: yarn test
