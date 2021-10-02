@@ -34,12 +34,14 @@ const Wrapper = styled.div<{ rotate?: boolean }>`
   .text4 {
     font-family: 'Black Ops One';
     font-size: 70px;
-    color: ${({ theme }) => theme.colors.white10};
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+    opacity: 0.1;
   }
 `;
 
 const Text = ({ text, className, rotate = false }: TextProps): ReactElement => (
-  <Wrapper rotate={rotate}>
+  <Wrapper rotate={rotate} className="text">
     <div className={className}>{text}</div>
   </Wrapper>
 );
