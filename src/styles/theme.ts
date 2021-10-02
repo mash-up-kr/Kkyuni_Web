@@ -27,6 +27,7 @@ const theme: Theme = {
     align-items: ${alignItems};
   `,
   ellipse: (wrap = 'nowrap') => css`
+    width: 100%;
     text-overflow: ellipsis;
     white-space: ${wrap};
     overflow: hidden;

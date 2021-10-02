@@ -19,17 +19,21 @@ const Wrapper = styled.div<{ rotate?: boolean }>`
     font-weight: bold;
     font-size: 13px;
     color: ${({ theme }) => theme.colors.white70};
+    ${({ theme }) => theme.ellipse()}
   }
   .text2 {
     font-family: 'Gmarket Sans';
     font-weight: bold;
     font-size: 18px;
+    height: 18px;
     color: ${({ theme }) => theme.colors.white70};
   }
   .text3 {
     font-family: 'Gmarket Sans';
     font-size: 14px;
     color: ${({ theme }) => theme.colors.white60};
+    line-height: 1.6;
+    line-break: anywhere;
   }
   .text4 {
     font-family: 'Black Ops One';

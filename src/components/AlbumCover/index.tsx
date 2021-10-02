@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import styled from '@emotion/styled';
 
-interface AlbumCoverProps {
+export interface AlbumCoverProps {
   src: string;
   isSmall?: boolean;
 }
@@ -12,7 +12,7 @@ const Wrapper = styled.img<{ isSmall?: boolean }>`
 `;
 
 const AlbumCover = ({ src, isSmall }: AlbumCoverProps): ReactElement => (
-  <Wrapper src={src} isSmall={isSmall} />
+  <Wrapper className="album-cover" src={src} isSmall={isSmall} />
 );
 
 export default AlbumCover;
