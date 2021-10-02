@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 `;
 
 const Badge = ({ type }: BadgeProps): ReactElement => (
-  <Wrapper>
+  <Wrapper className="badge">
     {
       {
         blue: <EmotionBlue />,

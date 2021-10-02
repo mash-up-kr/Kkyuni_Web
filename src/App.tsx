@@ -1,11 +1,11 @@
 import React, { ReactElement } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import Toggle from '@src/components/Toggle';
+import CardA from '@src/pages/CardA';
 
 const App = (): ReactElement => (
   <Switch>
-    <Route exact path="/" component={Toggle} />
+    <Route exact path="/" component={CardA} />
   </Switch>
 );
 
