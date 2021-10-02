@@ -2,6 +2,8 @@ import React, { ReactElement } from 'react';
 import styled from '@emotion/styled';
 import CardB from '@src/assets/CardB.svg';
 import BarcodeLarge from '@src/assets/BarcodeLarge.svg';
+import Diary from '@src/types/Diary';
+import { formatDate } from '@src/util';
 import AlbumCover from '../AlbumCover';
 import Badge from '../Badge';
 import Text from '../Text';
@@ -96,33 +98,38 @@ const DateWrapper = styled.div`
   font-size: 57px;
 `;
 
-const WrapCanvasB = (): ReactElement => (
-  <Wrapper color="#C4F212">
+const WrapCanvasB = ({
+  type,
+  date,
+  title,
+  content,
+  youtubeInfo,
+  emotion,
+}: Diary): ReactElement => (
+  <Wrapper color={type === 'BLUE2' ? '#4B13FE' : '#C4F212'}>
     <CardB />
     <ContentWrapper>
       <SongNameRow>
-        <Text text="DPR IAN - no blueberrie...dasdasd" className="text1" />
+        <Text text={youtubeInfo.title} className="text1" />
       </SongNameRow>
       <AlbumRow>
-        <WrappedCover src="https://media.architecturaldigest.com/photos/5890e88033bd1de9129eab0a/1:1/w_870,h_870,c_limit/Artist-Designed%20Album%20Covers%202.jpg" />
+        <a href={youtubeInfo.link} target="_blank" rel="noreferrer">
+          <WrappedCover src={youtubeInfo.thumbnail} />
+        </a>
         <BarcodeLarge />
       </AlbumRow>
       <TitleRow>
-        <Text text="마이 블루베리 토스트 14자" className="text2" />
+        <Text text={title} className="text2" />
       </TitleRow>
       <DetailRow>
-        <Text
-          text="가나다라마바사아자차카타파하가나다
-가나다라마바사아자차카타파하가나다가나다라마바사아자차카타파하가나다가나다라마바60자"
-          className="text3"
-        />
+        <Text text={content} className="text3" />
       </DetailRow>
     </ContentWrapper>
     <BadgeWrapper>
       <Badge type="blue" />
     </BadgeWrapper>
     <DateWrapper>
-      <Text text="211012" className="text4" />
+      <Text text={formatDate(date)} className="text4" />
     </DateWrapper>
   </Wrapper>
 );
