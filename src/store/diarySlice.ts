@@ -1,5 +1,5 @@
 import { ActionReducerMapBuilder, createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { getDiaryList, GetDiaryListRequestType } from '@src/api/diaryApi';
+import { getDiaryById, GetDiaryRequestType } from '@src/api/diaryApi';
 
 import Diary from '@src/types/Diary';
 
@@ -13,8 +13,8 @@ const initialState: DiaryState = {
 
 export const fetchDiary = createAsyncThunk(
   'diary/fetchById',
-  async (request: GetDiaryListRequestType) => {
-    const res = await getDiaryList(request);
+  async (request: GetDiaryRequestType) => {
+    const res = await getDiaryById(request);
     return res.data;
   }
 )
@@ -28,8 +28,13 @@ const diaryReducer = createSlice({
     },
   },
   extraReducers: (builder: ActionReducerMapBuilder<DiaryState>) => {
-    builder.addCase(fetchDiary.fulfilled, (state, action) => {
-      state.diary = action.payload.diary;
+    builder.addCase(fetchDiary.fulfilled, (state, {
+      payload: {
+        diary,
+        isSuccess
+      },
+    }) => {
+      state.diary = isSuccess ? diary : undefined;
     });
   }
 });
