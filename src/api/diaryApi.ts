@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from "axios";
+import axios, { AxiosResponse } from 'axios';
 
 import Diary from '@src/types/Diary';
 import { API_URL } from './common';
@@ -13,7 +13,7 @@ export type GetDiaryResponseType = {
 }
 
 export function getDiaryById(
-  { diaryId }: GetDiaryRequestType
+  { diaryId }: GetDiaryRequestType,
 ): Promise<AxiosResponse<GetDiaryResponseType>> {
   return axios.get(`${API_URL}/api/v1/diary/${diaryId}`);
 }
