@@ -16,6 +16,5 @@ module.exports = async ({ config }) => {
     '@src': SRC_PATH,
   };
 
-  // don't forget to return.
   return config;
 };
