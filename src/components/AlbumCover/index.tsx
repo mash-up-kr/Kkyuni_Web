@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import styled from '@emotion/styled';
 
-interface AlbumCoverProps {
+export interface AlbumCoverProps {
   src: string;
   isSmall?: boolean;
 }
@@ -15,8 +15,10 @@ const AlbumCover = ({
   src,
   isSmall,
   ...restProps
-}: AlbumCoverProps & Omit<React.HTMLProps<HTMLImageElement>, 'as' | 'crossOrigin'>): ReactElement => (
-  <Wrapper src={src} isSmall={isSmall} {...restProps} />
-);
+}: AlbumCoverProps &
+  Omit<
+    React.HTMLProps<HTMLImageElement>,
+    'as' | 'crossOrigin'
+  >): ReactElement => <Wrapper src={src} isSmall={isSmall} {...restProps} />;
 
 export default AlbumCover;

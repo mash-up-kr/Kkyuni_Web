@@ -4,6 +4,7 @@ import CardB from '@src/assets/CardB.svg';
 import BarcodeLarge from '@src/assets/BarcodeLarge.svg';
 import AlbumCover from '../AlbumCover';
 import Badge from '../Badge';
+import Text from '../Text';
 
 const Wrapper = styled.div`
   position: relative;
@@ -72,7 +73,7 @@ const DetailRow = styled.div`
 
 const WrappedCover = styled(AlbumCover)`
   margin-left: -10px;
-  border-right: 0.5px solid rgba(255, 255, 255, 0.5);  
+  border-right: 0.5px solid rgba(255, 255, 255, 0.5);
 `;
 
 const BadgeWrapper = styled.div`
@@ -96,26 +97,28 @@ const WrapCanvasB = (): ReactElement => (
     <CardB />
     <ContentWrapper>
       <SongNameRow>
-        sadasds
+        <Text text="DPR IAN - no blueberrie...dasdasd" className="text1" />
       </SongNameRow>
       <AlbumRow>
-        <WrappedCover
-          src="https://media.architecturaldigest.com/photos/5890e88033bd1de9129eab0a/1:1/w_870,h_870,c_limit/Artist-Designed%20Album%20Covers%202.jpg"
-        />
+        <WrappedCover src="https://media.architecturaldigest.com/photos/5890e88033bd1de9129eab0a/1:1/w_870,h_870,c_limit/Artist-Designed%20Album%20Covers%202.jpg" />
         <BarcodeLarge />
       </AlbumRow>
       <TitleRow>
-        asdasdj
+        <Text text="마이 블루베리 토스트 14자" className="text2" />
       </TitleRow>
       <DetailRow>
-        asdasdds
+        <Text
+          text="가나다라마바사아자차카타파하가나다
+가나다라마바사아자차카타파하가나다가나다라마바사아자차카타파하가나다가나다라마바60자"
+          className="text3"
+        />
       </DetailRow>
     </ContentWrapper>
     <BadgeWrapper>
       <Badge type="blue" />
     </BadgeWrapper>
     <DateWrapper>
-      211018
+      <Text text="211012" className="text4" />
     </DateWrapper>
   </Wrapper>
 );
