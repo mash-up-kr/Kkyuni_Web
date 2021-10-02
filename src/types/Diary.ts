@@ -5,7 +5,7 @@ type YoutubeInfo = {
   playTime: number;
 }
 
-type Emotion = 'ANGRY' | 'HAPPY';
+export type Emotion = 'ANGRY' | 'HAPPY';
 // TODO: 서버의 값에 맞춰 추가할 예정
 
 type DiaryType =
