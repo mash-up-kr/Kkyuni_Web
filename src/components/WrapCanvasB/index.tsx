@@ -130,7 +130,7 @@ const WrapCanvasB = ({
       </DetailRow>
     </ContentWrapper>
     <BadgeWrapper>
-      <Badge type={emotion} />
+      <Badge type="ANGRY" />
     </BadgeWrapper>
     <DateWrapper>
       <Text text={formatDate(date)} className="text4" />

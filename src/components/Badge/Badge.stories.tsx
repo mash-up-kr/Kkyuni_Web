@@ -12,5 +12,5 @@ const Template: Story<BadgeProps> = ({ type }: BadgeProps) => <Badge type={type}
 export const badge = Template.bind({});
 
 badge.args = {
-  type: 'yellow',
+  type: 'ANGRY',
 };
