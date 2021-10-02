@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Black Ops One';
+  src: url('fonts/BlackOpsOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gmarket Sans';
+  src: url('fonts/GmarketSansTTFMedium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gmarket Sans';
+  src: url('fonts/GmarketSansTTFLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gmarket Sans';
+  src: url('fonts/GmarketSansTTFBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Gmarket Sans', sans-serif;
+}

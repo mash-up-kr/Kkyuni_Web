@@ -1,4 +1,5 @@
 import path from 'path';
+import CopyPlugin from 'copy-webpack-plugin';
 
 const __dirname = path.resolve();
 
@@ -35,4 +36,19 @@ export default {
     },
     modules: ['node_modules'],
   },
+  plugins: [
+    new CopyPlugin({
+      patterns: [
+        {
+          context: path.join(__dirname, 'public'),
+          from: '**/*',
+          globOptions: {
+            dot: true,
+            gitignore: true,
+            ignore: ['**/index.html'],
+          },
+        },
+      ],
+    }),
+  ]
 };
