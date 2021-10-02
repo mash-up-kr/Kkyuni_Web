@@ -66,6 +66,11 @@ const AlbumRow = styled.div`
   }
 `;
 
+const BarcodeImage = styled.img`
+  width: 36px;
+  height: auto;
+`;
+
 const TitleRow = styled.div`
   display: flex;
   align-items: center;
@@ -128,7 +133,7 @@ const WrapCanvasB = ({
         >
           <WrappedCover src={youtubeInfo.thumbnail} />
         </a>
-        <img src={BarcodeLarge} alt="barcode_large" />
+        <BarcodeImage src={BarcodeLarge} alt="barcode_large" />
       </AlbumRow>
       <TitleRow>
         <Text text={title} className="text2" />
