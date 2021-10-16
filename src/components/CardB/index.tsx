@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import styled from '@emotion/styled';
-import CardB from '@src/assets/CardB.svg';
+import CardBBackground from '@src/assets/CardB.svg';
 import BarcodeLarge from '@src/assets/BarcodeLarge.png';
 import Play from '@src/assets/Play.svg';
 
@@ -108,7 +108,7 @@ const DateWrapper = styled.div`
   font-size: 57px;
 `;
 
-const WrapCanvasB = ({
+const CardB = ({
   type,
   date,
   title,
@@ -117,7 +117,7 @@ const WrapCanvasB = ({
   emotion,
 }: Diary): ReactElement => (
   <Wrapper color={type === 'BLUE' ? '#4B13FE' : '#C4F212'}>
-    <CardB />
+    <CardBBackground />
     <ContentWrapper>
       <SongNameRow>
         <a href={youtubeInfo.link} target="_blank" rel="noreferrer">
@@ -151,4 +151,4 @@ const WrapCanvasB = ({
   </Wrapper>
 );
 
-export default WrapCanvasB;
+export default CardB;

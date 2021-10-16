@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import styled from '@emotion/styled';
-import CardA from '@src/assets/CardA.svg';
+import CardABackground from '@src/assets/CardA.svg';
 import Play from '@src/assets/Play.svg';
 import BarcodeSmall from '@src/assets/BarcodeSmall.png';
 
@@ -96,7 +96,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const WrapCanvasA = ({
+const CardA = ({
   type,
   date,
   title,
@@ -123,7 +123,7 @@ const WrapCanvasA = ({
       </a>
       <Text text={youtubeInfo.title} className="text1" />
     </div>
-    <CardA />
+    <CardABackground />
     <div className="text-area">
       <Text text={title} className="text2" />
       <Text text={content} className="text3" />
@@ -134,4 +134,4 @@ const WrapCanvasA = ({
   </Wrapper>
 );
 
-export default WrapCanvasA;
+export default CardA;

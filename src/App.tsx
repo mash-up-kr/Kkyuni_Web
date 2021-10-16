@@ -1,12 +1,12 @@
 import React, { ReactElement } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import WrapCanvasA from '@src/components/WrapCanvasA';
-import WrapCanvasB from '@src/components/WrapCanvasB';
+import CardA from '@src/components/CardA';
+import CardB from '@src/components/CardB';
 
 const App = (): ReactElement => (
   <Switch>
     <Route path="/a">
-      <WrapCanvasA
+      <CardA
         title="우리의개꿈"
         content="화성갈끄니까"
         date={new Date()}
@@ -22,7 +22,7 @@ const App = (): ReactElement => (
       />
     </Route>
     <Route path="/b">
-      <WrapCanvasB
+      <CardB
         title="우리의개꿈"
         content="화성갈끄니까"
         date={new Date()}
