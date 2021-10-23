@@ -1,18 +1,18 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import WrapCanvasB from '@src/components/WrapCanvasB';
+import CardB from '@src/components/CardB';
 import Diary from '@src/types/Diary';
 
 export default {
-  title: 'Wrap Canvas B',
-  component: WrapCanvasB,
+  title: 'CardB',
+  component: CardB,
 } as Meta;
 
-const Template: Story<Diary> = (args: Diary) => <WrapCanvasB {...args} />;
+const Template: Story<Diary> = (args: Diary) => <CardB {...args} />;
 
-export const wrapCanvasB = Template.bind({});
+export const cardB = Template.bind({});
 
-wrapCanvasB.args = {
+cardB.args = {
   title: '우리의개꿈',
   content: '화성갈끄니까',
   date: new Date(),

@@ -7,7 +7,11 @@ export default {
   component: Text,
 } as Meta;
 
-const Template: Story<TextProps> = (args: TextProps) => <Text {...args} />;
+const Template: Story<TextProps> = (args: TextProps) => (
+  <div style={{ backgroundColor: 'black', height: '100vh' }}>
+    <Text {...args} />
+  </div>
+);
 
 export const text = Template.bind({});
 
