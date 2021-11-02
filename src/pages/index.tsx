@@ -26,15 +26,18 @@ const IndexPage = () => {
   }, []);
 
   return (
-    <PageWrapper>
+    <>
       <CardA {...diary} />
-      <KakaoButton url={window.location.href} />
-    </PageWrapper>
+      <ButtonWrapper>
+        <KakaoButton url={window.location.href} />
+      </ButtonWrapper>
+    </>
   );
 };
 
 export default IndexPage;
 
-const PageWrapper = styled.div`
+const ButtonWrapper = styled.div`
+  margin-top: 20px;
   text-align: center;
 `;
