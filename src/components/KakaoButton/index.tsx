@@ -18,7 +18,7 @@ const KakaoButton: FC<KakaoButtonProps> = ({ url }: KakaoButtonProps) => {
     Kakao.Link.sendDefault({
       objectType: 'feed',
       content: {
-        title: '뀨니뀨니',
+        title: '무비로그',
         description: '공유할끄니까',
         imageUrl:
           'https://k.kakaocdn.net/14/dn/btrjLxLjDDM/rIU0DYblVkzQRKl7SaiKN1/o.jpg',
