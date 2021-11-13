@@ -5,9 +5,11 @@ declare const Kakao: any;
 
 interface KakaoButtonProps {
   url: string;
+  title: string;
+  description: string;
 }
 
-const KakaoButton: FC<KakaoButtonProps> = ({ url }: KakaoButtonProps) => {
+const KakaoButton: FC<KakaoButtonProps> = ({ url, title, description }: KakaoButtonProps) => {
   useEffect(() => {
     if (!Kakao.isInitialized()) {
       Kakao.init('5fb43f5a2ce5219ff1ded0325d9d91e7');
@@ -18,8 +20,8 @@ const KakaoButton: FC<KakaoButtonProps> = ({ url }: KakaoButtonProps) => {
     Kakao.Link.sendDefault({
       objectType: 'feed',
       content: {
-        title: '무비로그',
-        description: '공유할끄니까',
+        title,
+        description,
         imageUrl:
           'https://k.kakaocdn.net/14/dn/btrjLxLjDDM/rIU0DYblVkzQRKl7SaiKN1/o.jpg',
         link: {
