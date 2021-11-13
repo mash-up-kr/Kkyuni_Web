@@ -20,5 +20,6 @@ export function getDiaryByDate(
     headers: {
       Authorization: `bearer ${token}`,
     },
+    withCredentials: true,
   });
 }
