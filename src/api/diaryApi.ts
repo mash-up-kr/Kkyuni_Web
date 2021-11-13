@@ -4,7 +4,8 @@ import Diary from '@src/types/Diary';
 import { API_URL } from './common';
 
 export type GetDiaryRequestType = {
-  diaryId: string;
+  date: string;
+  token: string;
 }
 
 export type GetDiaryResponseType = {
@@ -12,8 +13,12 @@ export type GetDiaryResponseType = {
   diary: Diary;
 }
 
-export function getDiaryById(
-  { diaryId }: GetDiaryRequestType,
+export function getDiaryByDate(
+  { date, token }: GetDiaryRequestType,
 ): Promise<AxiosResponse<GetDiaryResponseType>> {
-  return axios.get(`${API_URL}/api/v1/diary/${diaryId}`);
+  return axios.get(`${API_URL}/api/v1/diary/${date}`, {
+    headers: {
+      Authorization: `bearer ${token}`,
+    },
+  });
 }

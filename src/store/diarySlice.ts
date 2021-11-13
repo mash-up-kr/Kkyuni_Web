@@ -1,7 +1,7 @@
 import {
   ActionReducerMapBuilder, createAsyncThunk, createSlice, PayloadAction,
 } from '@reduxjs/toolkit';
-import { getDiaryById, GetDiaryRequestType, GetDiaryResponseType } from '@src/api/diaryApi';
+import { getDiaryByDate, GetDiaryRequestType, GetDiaryResponseType } from '@src/api/diaryApi';
 
 import Diary from '@src/types/Diary';
 
@@ -16,7 +16,7 @@ const initialState: DiaryState = {
 export const fetchDiary = createAsyncThunk(
   'diary/fetchById',
   async (request: GetDiaryRequestType) => {
-    const res = await getDiaryById(request);
+    const res = await getDiaryByDate(request);
     return res.data;
   },
 );
@@ -41,4 +41,5 @@ const diaryReducer = createSlice({
   },
 });
 
+export const { setDiary } = diaryReducer.actions;
 export default diaryReducer.reducer;
