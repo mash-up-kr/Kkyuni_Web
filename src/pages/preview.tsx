@@ -16,9 +16,24 @@ const PreviewPage = (): ReactElement => {
 
   useEffect(() => {
     (window as any).setDiary = (diaryStr: string) => {
-      const newDiary: Diary = JSON.parse(diaryStr);
-      newDiary.date = new Date(newDiary.date);
-      dispatch(setDiaryState({ diary: newDiary }));
+      const newDiary = JSON.parse(diaryStr);
+      dispatch(
+        setDiaryState({
+          diary: {
+            emotion: newDiary.emotion,
+            title: newDiary.title,
+            type: 'BLUE',
+            date: new Date(),
+            content: newDiary.content,
+            youtubeInfo: {
+              title: newDiary.music.title,
+              link: newDiary.music.linkUrl,
+              thumbnail: newDiary.music.thumbnailUrl,
+              playTime: newDiary.music.playTime,
+            },
+          },
+        }),
+      );
     };
   }, []);
 
