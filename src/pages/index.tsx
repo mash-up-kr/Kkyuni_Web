@@ -6,6 +6,8 @@ import CardA from '@src/components/CardA';
 import { useDiaryState } from '@src/store';
 import { fetchDiary } from '@src/store/diarySlice';
 
+import EmptyDiary from '@src/components/EmptyDiary';
+
 const IndexPage = () => {
   const { diary } = useDiaryState();
   const dispatch = useDispatch();
