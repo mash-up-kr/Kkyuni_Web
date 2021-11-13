@@ -40,7 +40,7 @@ const StyledPlus = styled(Plus)`
   top: 17px;
 `;
 
-const EmptyCard = () => (
+const EmptyDiary = () => (
   <Wrapper>
     <CardEmptyBackground />
     <ContentWrapper>
@@ -53,4 +53,4 @@ const EmptyCard = () => (
   </Wrapper>
 );
 
-export default EmptyCard;
+export default EmptyDiary;
