@@ -28,9 +28,9 @@ const IndexPage = () => {
   return (
     <>
       <CardA {...diary} />
-      <ButtonWrapper>
+      {/* <ButtonWrapper>
         <KakaoButton url={window.location.href} />
-      </ButtonWrapper>
+      </ButtonWrapper> */}
     </>
   );
 };
