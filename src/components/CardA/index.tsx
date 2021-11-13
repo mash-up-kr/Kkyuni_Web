@@ -90,9 +90,10 @@ const Wrapper = styled.div`
   .barcode {
     position: absolute;
     left: 68.21%;
-    right: -11.43%;
+    right: 0;
     top: 93.16%;
     bottom: -2.15%;
+    overflow: hidden;
   }
 `;
 

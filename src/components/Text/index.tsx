@@ -10,9 +10,11 @@ export interface TextProps {
 }
 
 const Wrapper = styled.div<{ rotate?: boolean }>`
-  ${({ rotate }) => rotate
-    && `transform: rotate(90deg); transform-origin: top left;
+  ${({ rotate }) =>
+    rotate &&
+    `transform: rotate(90deg); transform-origin: top left;
   `}
+  overflow: hidden;
 
   .text1 {
     font-family: 'Gmarket Sans';

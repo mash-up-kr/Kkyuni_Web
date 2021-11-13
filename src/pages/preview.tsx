@@ -1,5 +1,6 @@
-import React, { ReactElement, useEffect } from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
 import styled from '@emotion/styled';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import CardA from '@src/components/CardA';
 import {
@@ -7,16 +8,16 @@ import {
   useAppDispatch,
   useDiaryState,
 } from '@src/store';
-import Diary from '@src/types/Diary';
 import CardB from '@src/components/CardB';
 
 const PreviewPage = (): ReactElement => {
   const { diary } = useDiaryState();
   const dispatch = useAppDispatch();
 
+  const [index, setIndex] = useState(0);
+
   useEffect(() => {
-    (window as any).setDiary = (diaryStr: string) => {
-      const newDiary = JSON.parse(diaryStr);
+    (window as any).setDiary = (newDiary: any) => {
       dispatch(
         setDiaryState({
           diary: {
@@ -37,27 +38,49 @@ const PreviewPage = (): ReactElement => {
     };
   }, []);
 
+  useEffect(() => {
+    (window as any).selectType = () => {
+      if (index === 0 || index === 2) {
+        return 'A';
+      }
+
+      return 'B';
+    };
+  }, [index]);
+
   if (!diary) {
-    return <></>;
+    return <Wrapper />;
   }
 
   return (
-    <DiarySwiper>
-      <CardA {...diary} />
-      <CardB {...diary} />
-    </DiarySwiper>
+    <Wrapper>
+      <Swiper
+        centeredSlides
+        spaceBetween={30}
+        slidesPerView={2}
+        onSlideChange={(e) => setIndex(e.activeIndex)}
+      >
+        <SwiperSlide>
+          <CardA {...diary} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <CardB {...diary} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <CardA {...diary} type="GREEN" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <CardB {...diary} type="GREEN" />
+        </SwiperSlide>
+      </Swiper>
+    </Wrapper>
   );
 };
 
 export default PreviewPage;
 
-const DiarySwiper = styled.div`
-  display: flex;
-  flex-wrap: nowrap;
-  width: 100%;
-  overflow-x: scroll;
-
-  > div:not(:first-of-type) {
-    margin-left: 20px;
-  }
+const Wrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background: #1c1c1c;
 `;
