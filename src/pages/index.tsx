@@ -5,6 +5,8 @@ import CardA from '@src/components/CardA';
 import Diary from '@src/types/Diary';
 import KakaoButton from '@src/components/KakaoButton';
 
+import EmptyDiary from '@src/components/EmptyDiary';
+
 const IndexPage = () => {
   const [diary, setDiary] = useState<Diary>({
     title: '우리의개꿈',
@@ -27,6 +29,7 @@ const IndexPage = () => {
 
   return (
     <>
+      {/* <EmptyDiary /> */}
       <CardA {...diary} />
       <ButtonWrapper>
         <KakaoButton url={window.location.href} title={diary.title} description={diary.content} />
