@@ -20,8 +20,8 @@ const KakaoButton: FC<KakaoButtonProps> = ({ url, title, description }: KakaoBut
     Kakao.Link.sendDefault({
       objectType: 'feed',
       content: {
-        title: { title },
-        description: { description },
+        title,
+        description,
         imageUrl:
           'https://k.kakaocdn.net/14/dn/btrjLxLjDDM/rIU0DYblVkzQRKl7SaiKN1/o.jpg',
         link: {
