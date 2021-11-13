@@ -12,7 +12,7 @@ export type Emotion =
   | 'PANIC'
   | 'SAD';
 
-type DiaryType =
+export type DiaryType =
   | 'BLUE'
   | 'GREEN';
 

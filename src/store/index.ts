@@ -2,7 +2,7 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { useSelector, useDispatch } from 'react-redux';
 
 import uiReducer, { setLoading, setIsDark } from '@src/store/uiSlice';
-import diaryReducer from '@src/store/diarySlice';
+import diaryReducer, { setDiary } from '@src/store/diarySlice';
 
 const reducers = combineReducers({
   ui: uiReducer,
@@ -13,7 +13,7 @@ const store = configureStore({ reducer: reducers });
 
 export default store;
 
-export { setLoading, setIsDark };
+export { setLoading, setIsDark, setDiary };
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
