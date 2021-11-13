@@ -26,11 +26,6 @@ const ContentWrapper = styled.div`
   .plus-container {
     margin-bottom: 37px;
     position: relative;
-    img:last-child {
-      position: absolute;
-      left: 34px;
-      top: 17px;
-    }
     span {
       font-family: 'Gmarket Sans';
       font-size: 16px;
@@ -39,13 +34,19 @@ const ContentWrapper = styled.div`
   }
 `;
 
-const EmptyCard = (
+const StyledPlus = styled(Plus)`
+  position: absolute;
+  left: 34px;
+  top: 17px;
+`;
+
+const EmptyCard = () => (
   <Wrapper>
     <CardEmptyBackground />
     <ContentWrapper>
       <div className="plus-container">
         <img src={Logo} alt="logo" />
-        <img src={Plus} alt="plus" />
+        <StyledPlus />
       </div>
       <span>영화같은 오늘을 남겨보세요.</span>
     </ContentWrapper>
