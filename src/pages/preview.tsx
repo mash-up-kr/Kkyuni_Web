@@ -7,7 +7,6 @@ import {
   useAppDispatch,
   useDiaryState,
 } from '@src/store';
-import Diary from '@src/types/Diary';
 import CardB from '@src/components/CardB';
 
 const PreviewPage = (): ReactElement => {
@@ -15,8 +14,7 @@ const PreviewPage = (): ReactElement => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    (window as any).setDiary = (diaryStr: string) => {
-      const newDiary = JSON.parse(diaryStr);
+    (window as any).setDiary = (newDiary: any) => {
       dispatch(
         setDiaryState({
           diary: {
