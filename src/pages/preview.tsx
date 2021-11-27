@@ -23,7 +23,7 @@ const PreviewPage = (): ReactElement => {
           diary: {
             emotion: newDiary.emotion,
             title: newDiary.title,
-            type: 'BLUE',
+            type: 'BLUE1',
             date: new Date(),
             content: newDiary.content,
             youtubeInfo: {
@@ -67,10 +67,10 @@ const PreviewPage = (): ReactElement => {
           <CardB {...diary} />
         </SwiperSlide>
         <SwiperSlide>
-          <CardA {...diary} type="GREEN" />
+          <CardA {...diary} type="YELLOW1" />
         </SwiperSlide>
         <SwiperSlide>
-          <CardB {...diary} type="GREEN" />
+          <CardB {...diary} type="YELLOW2" />
         </SwiperSlide>
       </Swiper>
     </Wrapper>
