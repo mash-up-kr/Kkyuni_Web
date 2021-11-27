@@ -12,6 +12,7 @@ import CardB from '@src/components/CardB';
 
 const PreviewPage = (): ReactElement => {
   const { diary } = useDiaryState();
+
   const dispatch = useAppDispatch();
 
   const [index, setIndex] = useState(0);
@@ -55,9 +56,9 @@ const PreviewPage = (): ReactElement => {
   return (
     <Wrapper>
       <Swiper
+        slidesPerView="auto"
         centeredSlides
-        spaceBetween={30}
-        slidesPerView={2}
+        spaceBetween={15}
         onSlideChange={(e) => setIndex(e.activeIndex)}
       >
         <SwiperSlide>
@@ -83,4 +84,19 @@ const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
   background: #1c1c1c;
+  
+  .swiper {
+    height: 100%;
+  }
+  .swiper-wrapper {
+    width: 100%;
+    height: 100% !important;
+  }
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80% !important;
+    transform: scale(${(window.innerWidth / 280) * 0.8});
+  }
 `;
