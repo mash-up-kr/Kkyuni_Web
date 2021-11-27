@@ -13,8 +13,10 @@ export type Emotion =
   | 'SAD';
 
 export type DiaryType =
-  | 'BLUE'
-  | 'GREEN';
+  | 'YELLOW1'
+  | 'YELLOW2'
+  | 'BLUE1'
+  | 'BLUE2';
 
 type Diary = {
   type: DiaryType;

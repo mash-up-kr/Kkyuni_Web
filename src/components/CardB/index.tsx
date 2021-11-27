@@ -116,7 +116,7 @@ const CardB = ({
   youtubeInfo,
   emotion,
 }: Diary): ReactElement => (
-  <Wrapper color={type === 'BLUE' ? '#4B13FE' : '#C4F212'}>
+  <Wrapper color={type === 'BLUE2' ? '#4B13FE' : '#C4F212'}>
     <CardBBackground />
     <ContentWrapper>
       <SongNameRow>

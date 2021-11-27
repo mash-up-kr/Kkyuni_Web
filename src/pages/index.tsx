@@ -3,10 +3,10 @@ import queryString from 'query-string';
 import { useDispatch } from 'react-redux';
 
 import CardA from '@src/components/CardA';
+import CardB from '@src/components/CardB';
+
 import { useDiaryState } from '@src/store';
 import { fetchDiary } from '@src/store/diarySlice';
-
-import EmptyDiary from '@src/components/EmptyDiary';
 
 const IndexPage = () => {
   const { diary } = useDiaryState();
@@ -43,7 +43,11 @@ const IndexPage = () => {
     return <></>;
   }
 
-  return <CardA {...diary} />;
+  if (diary?.type?.includes('1')) {
+    return <CardA {...diary} />;
+  }
+
+  return <CardB {...diary} />;
 };
 
 export default IndexPage;
