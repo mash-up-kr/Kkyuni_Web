@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import EmotionBlue from '@src/assets/EmotionBlue.png';
 import EmotionYellow from '@src/assets/EmotionYellow.png';
 import EmotionRed from '@src/assets/EmotionRed.png';
-import EmotionPupple from '@src/assets/EmotionPupple.png';
+import EmotionPurple from '@src/assets/EmotionPurple.png';
 import EmotionGreen from '@src/assets/EmotionGreen.png';
 import { Emotion } from '@src/types/Diary';
 
@@ -30,7 +30,7 @@ const getImageFromType = (type: Emotion) => {
     case 'NOTBAD':
       return EmotionGreen;
     case 'PANIC':
-      return EmotionPupple;
+      return EmotionPurple;
     case 'SAD':
     default:
       return EmotionBlue;
