@@ -45,11 +45,11 @@ const PreviewPage = (): ReactElement => {
         return 'YELLOW1';
       }
 
-      if (index === 2) {
+      if (index === 1) {
         return 'BLUE1';
       }
 
-      if (index === 3) {
+      if (index === 2) {
         return 'YELLOW2';
       }
 
@@ -70,16 +70,16 @@ const PreviewPage = (): ReactElement => {
         onSlideChange={(e) => setIndex(e.activeIndex)}
       >
         <SwiperSlide>
-          <CardA {...diary} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardB {...diary} />
-        </SwiperSlide>
-        <SwiperSlide>
           <CardA {...diary} type="YELLOW1" />
         </SwiperSlide>
         <SwiperSlide>
+          <CardA {...diary} type="BLUE1" />
+        </SwiperSlide>
+        <SwiperSlide>
           <CardB {...diary} type="YELLOW2" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <CardB {...diary} type="BLUE2" />
         </SwiperSlide>
       </Swiper>
     </Wrapper>
