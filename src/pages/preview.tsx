@@ -41,11 +41,19 @@ const PreviewPage = (): ReactElement => {
 
   useEffect(() => {
     (window as any).selectType = () => {
-      if (index === 0 || index === 2) {
-        return 'A';
+      if (index === 0) {
+        return 'YELLOW1';
       }
 
-      return 'B';
+      if (index === 2) {
+        return 'BLUE1';
+      }
+
+      if (index === 3) {
+        return 'YELLOW2';
+      }
+
+      return 'BLUE2';
     };
   }, [index]);
 
