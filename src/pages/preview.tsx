@@ -50,11 +50,11 @@ const PreviewPage = (): ReactElement => {
   }, [index]);
 
   if (!diary) {
-    return <Wrapper />;
+    return <Wrapper calcScale={0} />;
   }
 
   return (
-    <Wrapper>
+    <Wrapper calcScale={(window.innerHeight / 512) * 0.9}>
       <Swiper
         slidesPerView="auto"
         centeredSlides
@@ -80,11 +80,11 @@ const PreviewPage = (): ReactElement => {
 
 export default PreviewPage;
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ calcScale: number }>`
   width: 100vw;
   height: 100vh;
   background: #1c1c1c;
-  
+
   .swiper {
     height: 100%;
   }
@@ -96,7 +96,7 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80% !important;
-    transform: scale(${(window.innerWidth / 280) * 0.8});
+    width: ${({ calcScale }) => 280 * calcScale}px !important;
+    transform: scale(${({ calcScale }) => calcScale});
   }
 `;
