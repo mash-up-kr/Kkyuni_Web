@@ -41,20 +41,28 @@ const PreviewPage = (): ReactElement => {
 
   useEffect(() => {
     (window as any).selectType = () => {
-      if (index === 0 || index === 2) {
-        return 'A';
+      if (index === 0) {
+        return 'YELLOW1';
       }
 
-      return 'B';
+      if (index === 1) {
+        return 'BLUE1';
+      }
+
+      if (index === 2) {
+        return 'YELLOW2';
+      }
+
+      return 'BLUE2';
     };
   }, [index]);
 
   if (!diary) {
-    return <Wrapper />;
+    return <Wrapper calcScale={0} />;
   }
 
   return (
-    <Wrapper>
+    <Wrapper calcScale={(window.innerHeight / 512) * 0.9}>
       <Swiper
         slidesPerView="auto"
         centeredSlides
@@ -62,16 +70,16 @@ const PreviewPage = (): ReactElement => {
         onSlideChange={(e) => setIndex(e.activeIndex)}
       >
         <SwiperSlide>
-          <CardA {...diary} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardB {...diary} />
-        </SwiperSlide>
-        <SwiperSlide>
           <CardA {...diary} type="YELLOW1" />
         </SwiperSlide>
         <SwiperSlide>
+          <CardA {...diary} type="BLUE1" />
+        </SwiperSlide>
+        <SwiperSlide>
           <CardB {...diary} type="YELLOW2" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <CardB {...diary} type="BLUE2" />
         </SwiperSlide>
       </Swiper>
     </Wrapper>
@@ -80,11 +88,11 @@ const PreviewPage = (): ReactElement => {
 
 export default PreviewPage;
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ calcScale: number }>`
   width: 100vw;
   height: 100vh;
   background: #1c1c1c;
-  
+
   .swiper {
     height: 100%;
   }
@@ -96,7 +104,7 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80% !important;
-    transform: scale(${(window.innerWidth / 280) * 0.8});
+    width: ${({ calcScale }) => 280 * calcScale}px !important;
+    transform: scale(${({ calcScale }) => calcScale});
   }
 `;
