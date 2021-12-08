@@ -14,7 +14,7 @@ export default merge(baseConfig, {
     historyApiFallback: true,
     proxy: {
       '/api/': { 
-        target: 'https://api.qyunny.site',
+        target: 'https://api.gyunny.site',
         changeOrigin: true,
       },
     },
