@@ -11,6 +11,14 @@ export const TEMPLATE_PATH = path.resolve(PROJECT_ROOT, 'public');
 
 export default {
   entry: path.resolve(SRC_PATH, 'index.tsx'),
+  devServer: {
+    proxy: {
+      '/api/': { 
+        target: 'https://api.gyunny.site',
+        changeOrigin: true,
+      },
+    },
+  },
   output: {
     path: DIST_PATH,
     filename: '[name].js',

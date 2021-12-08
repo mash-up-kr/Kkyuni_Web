@@ -12,12 +12,6 @@ export default merge(baseConfig, {
     port: '5050',
     host: '127.0.0.1',
     historyApiFallback: true,
-    proxy: {
-      '/api/': { 
-        target: 'https://api.gyunny.site',
-        changeOrigin: true,
-      },
-    },
   },
   plugins: [
     new HtmlWebPackPlugin({
