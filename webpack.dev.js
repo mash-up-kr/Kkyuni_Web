@@ -12,6 +12,12 @@ export default merge(baseConfig, {
     port: '5050',
     host: '127.0.0.1',
     historyApiFallback: true,
+    proxy: {
+      '/api/': { 
+        target: 'http://3.37.106.181:8080',
+        changeOrigin: true,
+      },
+    },
   },
   plugins: [
     new HtmlWebPackPlugin({
