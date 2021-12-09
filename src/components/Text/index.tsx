@@ -10,9 +10,8 @@ export interface TextProps {
 }
 
 const Wrapper = styled.div<{ rotate?: boolean }>`
-  ${({ rotate }) =>
-    rotate &&
-    `transform: rotate(90deg); transform-origin: top left;
+  ${({ rotate }) => rotate
+    && `transform: rotate(90deg); transform-origin: top left;
   `}
   overflow: hidden;
 
@@ -29,6 +28,7 @@ const Wrapper = styled.div<{ rotate?: boolean }>`
     font-size: 18px;
     height: 18px;
     color: ${({ theme }) => theme.colors.white70};
+    ${({ theme }) => theme.ellipse()}
   }
   .text3 {
     font-family: 'Gmarket Sans';
@@ -36,6 +36,12 @@ const Wrapper = styled.div<{ rotate?: boolean }>`
     color: ${({ theme }) => theme.colors.white60};
     line-height: 1.6;
     line-break: anywhere;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
   }
   .text4 {
     font-family: 'Black Ops One';
