@@ -5,6 +5,7 @@ import styled from '@emotion/styled';
 
 import CardA from '@src/components/CardA';
 import CardB from '@src/components/CardB';
+import NewCard from '@src/assets/NewCard.png';
 
 import { useDiaryState } from '@src/store';
 import { fetchDiary } from '@src/store/diarySlice';
@@ -28,7 +29,7 @@ const IndexPage = () => {
 
   const renderCard = useMemo(() => {
     if (!diary) {
-      return <></>;
+      return <NewCardImg src={NewCard} alt="make-new" />;
     }
 
     if (diary.type?.includes('1')) {
@@ -63,4 +64,8 @@ const CardWrapper = styled.div<{ calcScale: number }>`
   left: 50%;
   width: ${({ calcScale }) => 280 * calcScale}px !important;
   transform: translate(-42%, -50%) scale(${({ calcScale }) => calcScale});
+`;
+
+const NewCardImg = styled.img`
+  width: 86%;
 `;
