@@ -33,6 +33,14 @@ const theme: Theme = {
     overflow: hidden;
     display: block;
   `,
+  ellipseLine: (line = 4) => css`
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: ${line};
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+  `,
 };
 
 export const themeLight: Theme = {

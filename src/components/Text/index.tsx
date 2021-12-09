@@ -36,12 +36,7 @@ const Wrapper = styled.div<{ rotate?: boolean }>`
     color: ${({ theme }) => theme.colors.white60};
     line-height: 1.6;
     line-break: anywhere;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    word-wrap: break-word;
+   ${({ theme }) => theme.ellipseLine(4)}
   }
   .text4 {
     font-family: 'Black Ops One';

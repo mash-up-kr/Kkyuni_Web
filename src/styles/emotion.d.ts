@@ -25,6 +25,7 @@ declare module '@emotion/react' {
       alignItems?: string,
     ) => InterpolationWithTheme;
     ellipse: (wrap?: string) => FlattenSimpleInterpolation;
+    ellipseLine: (line?: number) => FlattenSimpleInterpolation;
 
     text?: string;
     background?: string;
