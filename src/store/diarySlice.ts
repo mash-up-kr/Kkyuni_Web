@@ -37,7 +37,7 @@ const diaryReducer = createSlice({
     builder.addCase(fetchDiary.fulfilled, (state, {
       payload,
     }) => {
-      state.diary = payload.title ? convertResponseToDiary(payload) : undefined;
+      state.diary = payload?.title ? convertResponseToDiary(payload) : undefined;
     });
   },
 });
