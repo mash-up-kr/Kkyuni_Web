@@ -14,6 +14,7 @@ export type GetDiaryResponseType = {
   latitude: string;
   longitude: string;
   musicPlayTime: number;
+  musicThumbnailImageUrl: string;
   title: string;
   webViewURL: string;
   writingDate: string;
@@ -30,7 +31,7 @@ export const convertResponseToDiary = (newDiary: GetDiaryResponseType): Diary =>
   youtubeInfo: {
     title: newDiary.title,
     link: newDiary.youtubeLink,
-    thumbnail: newDiary.webViewURL,
+    thumbnail: newDiary.musicThumbnailImageUrl,
     playTime: newDiary.musicPlayTime,
   },
 });
