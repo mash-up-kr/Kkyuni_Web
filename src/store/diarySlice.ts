@@ -16,8 +16,12 @@ const initialState: DiaryState = {
 export const fetchDiary = createAsyncThunk(
   'diary/fetchById',
   async (request: GetDiaryRequestType) => {
-    const res = await getDiaryByDate(request);
-    return res.data;
+    try {
+      const res = await getDiaryByDate(request);
+      return res.data;
+    } catch (e) {
+      console.log(e);
+    }
   },
 );
 
@@ -33,7 +37,7 @@ const diaryReducer = createSlice({
     builder.addCase(fetchDiary.fulfilled, (state, {
       payload,
     }) => {
-      state.diary = payload.title ? convertResponseToDiary(payload) : undefined;
+      state.diary = payload?.title ? convertResponseToDiary(payload) : undefined;
     });
   },
 });
