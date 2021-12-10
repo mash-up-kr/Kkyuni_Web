@@ -16,14 +16,6 @@ export default {
     filename: '[name].js',
     clean: true,
   },
-  devServer: {
-    proxy: {
-      '/api/': { 
-        target: 'https://api.gyunny.site',
-        changeOrigin: true,
-      },
-    },
-  },
   module: {
     rules: [
       {
