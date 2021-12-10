@@ -45,6 +45,5 @@ export function getDiaryByDate(
     headers: {
       Authorization: `Bearer ${token}`,
     },
-    withCredentials: true,
   });
 }
