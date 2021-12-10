@@ -17,6 +17,7 @@ export const fetchDiary = createAsyncThunk(
   'diary/fetchById',
   async (request: GetDiaryRequestType) => {
     const res = await getDiaryByDate(request);
+    alert(res.data);
     return res.data;
   },
 );
