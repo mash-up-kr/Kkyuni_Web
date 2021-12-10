@@ -16,10 +16,12 @@ const initialState: DiaryState = {
 export const fetchDiary = createAsyncThunk(
   'diary/fetchById',
   async (request: GetDiaryRequestType) => {
-    const res = await getDiaryByDate(request);
-    alert(res.data);
-    alert(res);
-    return res.data;
+    try {
+      const res = await getDiaryByDate(request);
+      return res.data;
+    } catch (e) {
+      console.log(e);
+    }
   },
 );
 
