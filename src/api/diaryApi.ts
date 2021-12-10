@@ -2,6 +2,8 @@ import axios, { AxiosResponse } from 'axios';
 
 import Diary, { DiaryType, Emotion } from '@src/types/Diary';
 
+const BASE_URL = process.env.NODE_ENV === 'production' ? 'https://api.gyunny.site' : '';
+
 export type GetDiaryRequestType = {
   date: string;
   token: string;
@@ -39,7 +41,7 @@ export const convertResponseToDiary = (newDiary: GetDiaryResponseType): Diary =>
 export function getDiaryByDate(
   { date, token }: GetDiaryRequestType,
 ): Promise<AxiosResponse<GetDiaryResponseType>> {
-  return axios.get(`/api/v1/diary/${date}`, {
+  return axios.get(`${BASE_URL}/api/v1/diary/${date}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
