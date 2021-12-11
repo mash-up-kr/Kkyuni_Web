@@ -50,7 +50,7 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -58,7 +58,7 @@ const Wrapper = styled.div`
   overflow: hidden;
 `;
 
-const CardWrapper = styled.div<{ calcScale: number }>`
+export const CardWrapper = styled.div<{ calcScale: number }>`
   position: absolute;
   top: 50%;
   left: 50%;
